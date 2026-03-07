@@ -1,6 +1,99 @@
+:root {
+  --orange:      #ff8c00;
+  --seagrass:    #65a98f;
+  --rust:        #a93400;
+  --cream:       #fff4db;
+  --bg:          #0e0c09;
+  --divider:     #3a3020;
+  --bg-cell:     #120f0b;
+  --text-dim:    #e4ddcc;
+}
+
+
+main {
+  margin-left: 100px;
+  margin-top: 50px;
+  max-width: 880px;
+}
+
+.title {
+  color: var(--orange);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.06rem;
+  margin: 0 0 10px;
+  line-height: 1;
+}
+
+.subtitle {
+  color: var(--seagrass);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0px;
+  line-height: 1.6;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: monospace;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+#summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--divider);
+  background: var(--bg-cell);
+  max-width: 800px;
+  margin-bottom: 100px;
+}
+
+.sg-cell {
+  padding: 22px 24px;
+  border-right: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+}
+
+.sg-label {
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color:var(--orange);
+  margin-bottom: 8px;
+}
+
+.sg-value {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color:var(--cream);
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.sg-sub {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.5;
 }
 canvas {
   display: block;
