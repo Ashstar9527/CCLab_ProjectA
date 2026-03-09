@@ -107,7 +107,7 @@ function eraseOutside() {
   let cornerLift = smileAmt * 20;
 
   let right = 600 + eyeShiftX;
-  let left = 200 + eyeShiftY;
+  let left = 200 + eyeShiftX;
   
   shaded.beginShape();
   shaded.vertex(0, 0);
@@ -283,7 +283,7 @@ function drawEyelids() {
   let ex = width / 2 + eyeShiftX;
   let ey = height / 2 + eyeShiftY;
   let left = 200 + eyeShiftX;
-  let right = 600 + eyeShiftY;
+  let right = 600 + eyeShiftX;
   
   let lowerLift = smileAmt * 80;
   let upperDrop = smileAmt * 60;
