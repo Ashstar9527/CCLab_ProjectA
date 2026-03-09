@@ -4,15 +4,129 @@
   --rust:        #a93400;
   --cream:       #fff4db;
   --bg:          #0e0c09;
+  --bg-mid:      #161208;
+  --bg-entry:    #120f0b;
   --divider:     #3a3020;
   --bg-cell:     #120f0b;
   --text-dim:    #e4ddcc;
+  --papaya-whip: #fff4db;
+  --nav-h:       40px;
+}
+
+*, *::before, *::after {box-sizing: border-box;}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: monospace;
+  font-size: 16px;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ------------
+BACKGROUND EFFECTS
+_____________________*/
+
+
+#film-strip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 100%;
+  z-index: 5;
+  background-color:  var(--bg-mid);
+  border-left: 1px solid #2a2318;
+  overflow: hidden;
+}
+
+#film-strip::before{
+  content: '';
+  display: block;
+  width: 10px;
+  height: 100%;
+  margin: 6px auto 0;
+  background-image:
+  repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 8px, var(--papaya-whip) 8px, var(--papaya-whip) 14px, transparent 14px, transparent 22px
+  );
+  opacity: 0.18;
+}
+
+/*---------Navigation Bar----------*/
+
+#top-nav {
+  position: fixed;
+  top: 0; left: 0; right: 28px;
+  height: var(--nav-h);
+  z-index: 20;
+  background: var(--bg-entry);
+  border-bottom: 1px solid var(--divider);
+  display: flex;
+  padding: 0 20px 0 16px;
+  align-items: center;
+}
+
+#top-nav-logo-mark {
+
+}
+
+#top-nav-links {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
 
+.nav-link {
+  font-family: monospace;;
+  font-size: 0.66rem;
+  padding: 0 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color:#fff4db; 
+}
+
+.nav-sep {
+  color: var(--divider);
+  font-size: 0.65rem;
+  user-select: none;
+}
+
+#top-nav-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-meta-item {
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.nav-meta-sep {
+  color: var(--divider);
+  font-size: 0.65rem;
+}
+
+.nav-meta-warn {
+  color: var(--rust);
+  font-size: 0.8rem;
+}
+
+/*----------Main Content-----------*/
+
 main {
   margin-left: 100px;
-  margin-top: 50px;
+  margin-top: 100px;
   max-width: 880px;
 }
 
@@ -21,7 +135,7 @@ main {
   font-size: 0.7rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin: 0 0 10px;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -43,16 +157,6 @@ h1 {
 
 header {
   margin-bottom: 40px;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--cream);
-  font-family: monospace;
-  font-size: 16px;
-  overflow-x: hidden;
 }
 
 #summary-grid {
