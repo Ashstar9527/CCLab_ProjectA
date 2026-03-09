@@ -52,8 +52,6 @@ function draw() {
   creature();
   drawBlink();
   drawProbe()
-
-
 }
 
 function creature() {
@@ -62,7 +60,6 @@ function creature() {
   smile();
   updateEyeShift();
 
-  
   push();
     translate(eyeShiftX, eyeShiftY);
     shaded.clear();
@@ -76,13 +73,13 @@ function creature() {
 }
 
 function drawProbe() {
-  probeX = lerp(probeX, mouseX, 0.04);
-  probeY = lerp(probeY, mouseY, 0.04);
+  probeX = lerp(probeX, mouseX+20, 0.04);
+  probeY = lerp(probeY, mouseY+20, 0.04);
 
   push();
   translate(probeX, probeY);
   textAlign(CENTER, CENTER);
-  textSize(50);
+  textSize(40);
   text('🛸', 0, 0);
   pop();
 }
@@ -260,9 +257,7 @@ function drawPupil(ix, iy) {
   } else {
     speed = 0.02;
   }
-  
   arcAngle += speed;
-
 
   shaded.stroke(180, 70, 95, 70);
   shaded.noFill();
@@ -280,7 +275,6 @@ function drawPupil(ix, iy) {
   shaded.noStroke();
   shaded.fill(20, 100, 100, 100)
   shaded.circle(gazeX, gazeY, baseSize * 0.1)
-  
 }
 
 function drawEyelids() {
@@ -295,7 +289,6 @@ function drawEyelids() {
   let upperDrop = smileAmt * 60;
   let cornerLift = smileAmt * 20;
   let cornerDrop = smileAmt * 15;
-  
 
   stroke(25, 90, 100, 100);
   strokeWeight(10);
@@ -367,7 +360,6 @@ function mousePressed() {
   smiling = true;
 }
 
-
 function drawGrid() {
   // Grid generator
   push();
@@ -427,7 +419,7 @@ function drawGrid() {
         //Color cluster
         let baseHue = map(noiseVal, 0, 1, 100, 360);
         let compHue = (baseHue + 180) % 360;
-        let hueShift = map(dis, 50, 0, baseHue, compHue);
+        let hueShift = map(dis, 60, 0, baseHue, compHue);
         fill(hueShift, 100, 100, 255);
       }
 
